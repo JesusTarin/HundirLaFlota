@@ -53,7 +53,7 @@ public class Inputs {
     }
 
     public static int[] directionToInteger(String direction){
-        int[] finalDirection = new int[2];
+        int[] finalDirection = {0,0};
         switch (direction) {
             case "r":
                 finalDirection[0] = 1;

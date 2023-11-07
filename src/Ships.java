@@ -8,18 +8,18 @@ public class Ships {
             int p1 = position[0];
             int p2 = position[1];
             int[] dir = Inputs.askDirection();
-            int[] sum = dir;
             for (int j = 0; j < ships[i]; j++) {
                 if (shipFits(board,ships[i],dir,p1,p2)){
                     board[p1][p2] = "B";
-                    p1 += sum[0];
-                    p2 += sum[1];
+                    p1 += dir[0];
+                    p2 += dir[1];
                 } else {
+                    System.out.println("Ship does not fit here...");
                     position = Inputs.askPosition();
                     p1 = position[0];
                     p2 = position[1];
+                    position = Inputs.askPosition();
                     dir = Inputs.askDirection();
-                    sum = Inputs.directionToInteger(dir)[1]+""+Inputs.directionToInteger(dir)[0];
                 }
                 Boards.showBoard(board);
             }
@@ -28,7 +28,7 @@ public class Ships {
 
     public static boolean shipFits(String[][] board, int shipLength, int[] direction, int p1, int p2) {
         int fits = 0;
-        int[] dir = Inputs.directionToInteger(direction);
+        int[] dir = Inputs.askDirection();
         if (board[p1][p2].equals("~")) {
             fits++;
             p1 += dir[1];
