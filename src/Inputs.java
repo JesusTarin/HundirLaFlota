@@ -6,7 +6,7 @@ public class Inputs {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce a position (example: e4):");
         String position = sc.next();
-        while (!(position.charAt(0)>='a' && position.charAt(0)<='j') && !(position.charAt(1)>='0' && position.charAt(1)<=9)){
+        while (!(position.charAt(0)>='a' && position.charAt(0)<='j') && !(position.charAt(1)>=1 && position.charAt(1)<=9)){
             System.out.println("Introduce a correct position (example: e4):");
             position = sc.next();
         }
@@ -56,16 +56,16 @@ public class Inputs {
         int[] finalDirection = {0,0};
         switch (direction) {
             case "r":
-                finalDirection[0] = 1;
+                finalDirection[1] = 1;
                 break;
             case "l":
-                finalDirection[0] = -1;
-                break;
-            case "u":
                 finalDirection[1] = -1;
                 break;
+            case "u":
+                finalDirection[0] = -1;
+                break;
             case "d":
-                finalDirection[1] = 1;
+                finalDirection[0] = 1;
                 break;
         }
         return finalDirection;

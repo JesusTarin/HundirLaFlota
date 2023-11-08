@@ -5,7 +5,7 @@ public class Game {
         while (playing()) {
             Boards.generateBoard(board);
             Boards.showBoard(board);
-            Ships.placeShips(board);
+            Ships.ships(board);
 
         }
     }
