@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class Inputs {
 
+    public static String askPlayerName(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce a position (example: e4):");
+        return sc.nextLine();
+    }
+
     public static int[] askPosition(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce a position (example: e4):");
         String position = sc.next();
-        while (!(position.charAt(0)>='a' && position.charAt(0)<='j') && !(position.charAt(1)>=1 && position.charAt(1)<=9)){
+        while (position.length()!=2  || !((position.charAt(0)<='a' || position.charAt(0)>='j') || (position.charAt(1)<=1 || position.charAt(1)>=9))){
             System.out.println("Introduce a correct position (example: e4):");
             position = sc.next();
         }
@@ -37,7 +43,7 @@ public class Inputs {
         } else if (input.toLowerCase().charAt(0)=='j'){
             finalPosition[0] = 10;
         }
-        finalPosition[1] = Integer.parseInt(String.valueOf(input.charAt(1)));
+        finalPosition[1] = Integer.parseInt(String.valueOf(input.charAt(1)))+1;
         return finalPosition;
     }
 
@@ -69,5 +75,14 @@ public class Inputs {
                 break;
         }
         return finalDirection;
+    }
+
+    public static int randomPosition(){
+        return ((int)(Math.random()*10)+1);
+    }
+
+    public static int[] randomDirection(){
+        String[] dirs = {"r", "l", "u", "d"};
+        return directionToInteger(dirs[(int)(Math.random()*4)]);
     }
 }
