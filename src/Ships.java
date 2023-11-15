@@ -1,5 +1,5 @@
 public class Ships {
-    public static void ships(String[][] board){
+    public static void ships(String[][] board, String[][] boardShots){
         int[] ships = {4,3,3,2,2,1};
         for (int ship : ships) {
             int[] position = Inputs.askPosition();
@@ -14,8 +14,7 @@ public class Ships {
                 dir = Inputs.askDirection();
             }
             placeShip(board, ship, dir, p1, p2);
-            Boards.showBoard(board);
-
+            Boards.showBoard(board, boardShots);
         }
     }
 
@@ -62,13 +61,12 @@ public class Ships {
             int p1 = Inputs.randomPosition();
             int p2 = Inputs.randomPosition();
             int[] dir = Inputs.randomDirection();
-            while (!shipFits(boardPC, ship, dir, p1, p2)) {
-                System.out.println("Ship does not fit here...");
+            while (!shipFitsPC(boardPC, ship, dir, p1, p2)) {
                 p1 = Inputs.randomPosition();
                 p2 = Inputs.randomPosition();
                 dir = Inputs.randomDirection();
             }
-            placeShip(boardPC, ship, dir, p1, p2);
+            placeShipPC(boardPC, ship, dir, p1, p2);
         }
     }
 

@@ -50,6 +50,9 @@ public class Inputs {
     public static int[] askDirection(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce the direction to place the ship (right/left/up/down):");
+        while (!sc.hasNextLine()){
+            System.out.println("Introduce a correct direction:");
+        }
         String direction = sc.next().charAt(0)+"".toLowerCase();
         while (!direction.equals("r") && !direction.equals("l") && !direction.equals("u") && !direction.equals("d")) {
             System.out.println("Introduce a correct direction:");
