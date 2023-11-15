@@ -2,12 +2,6 @@ import java.util.Scanner;
 
 public class Inputs {
 
-    public static String askPlayerName(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce a position (example: e4):");
-        return sc.nextLine();
-    }
-
     public static int[] askPosition(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce a position (example: e4):");
