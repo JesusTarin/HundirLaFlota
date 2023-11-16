@@ -4,10 +4,10 @@ public class Inputs {
 
     public static int[] askPosition(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce a position (example: e4):");
+        System.out.println("»»» Introduce the position to place the ship (ex.: e4, j1, b8): «««");
         String position = sc.next();
-        while (position.length()!=2  || !((position.charAt(0)<='a' || position.charAt(0)>='j') || (position.charAt(1)<=1 || position.charAt(1)>=9))){
-            System.out.println("Introduce a correct position (example: e4):");
+        while (position.length()!=2  || (position.charAt(0)<'a' || position.charAt(0)>'j') || (position.charAt(1)<'1' || position.charAt(1)>'9')){
+            System.out.println("»»» Introduce a correct position (example: e4): «««");
             position = sc.next();
         }
         return letterToInteger(position);
@@ -43,13 +43,13 @@ public class Inputs {
 
     public static int[] askDirection(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce the direction to place the ship (right/left/up/down):");
+        System.out.println("»»» Introduce the direction to place the rest of the ship (right/left/up/down): «««");
         while (!sc.hasNextLine()){
             System.out.println("Introduce a correct direction:");
         }
         String direction = sc.next().charAt(0)+"".toLowerCase();
         while (!direction.equals("r") && !direction.equals("l") && !direction.equals("u") && !direction.equals("d")) {
-            System.out.println("Introduce a correct direction:");
+            System.out.println("»»» Incorrect direction «««");
             direction = sc.next().charAt(0)+"".toLowerCase();
         }
         return directionToInteger(direction);

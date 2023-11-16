@@ -27,7 +27,7 @@ public class Boards {
     }
 
     public static void showBoard(String[][] board, String[][] boardShots){
-        System.out.println("\n\t\t +---------------------------------------------------------------------------------------------------------------------------*" +
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t +---------------------------------------------------------------------------------------------------------------------------*" +
                 "\n\t    /\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t/|" +
                 "\n\t   /\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   / |" +
                 "\n\t  /\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  /  |");
@@ -63,7 +63,7 @@ public class Boards {
             System.out.println();
         }
         System.out.println("\t\\|/\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\\|/");
-        System.out.println("\t/|>-------------------------------------------------------------------------------------------------------------------------<|");
+        System.out.println("\t/|>-------------------------------------------------------------------------------------------------------------------------<|\n\n\n\n\n\n\n");
         System.out.println();
     }
 
